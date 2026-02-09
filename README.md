@@ -1,1 +1,0 @@
-# proyecto_grupo_6
