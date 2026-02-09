@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
@@ -11,7 +12,6 @@
     text-decoration: none;
     color: black;
     box-shadow: 2px 2px black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 10px;
 }
 
@@ -19,42 +19,50 @@ header {
     display: flex;
     background-color: #cccccc;
     padding: 10px;
-    height: 100px;
+    height: 70px;
 }
 
 .logo {
     height: 50px;
     width: auto;
-    margin: 24px;
+    margin: 9px;
 }
 
 nav {
     display: flex;
     column-gap: 1200px;
     align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-nav a:hover{
+
+nav a:hover {
     background-color: rgb(149, 149, 255);
 }
 
-nav a.activo{
+nav a.activo {
     background-color: rgb(149, 149, 255);
     color: white;
 }
 
 .carrucel {
-    width: 1280px;
+    max-width: 1280px;
     height: auto;
     margin: 50px auto 0;
+    overflow: hidden;
 }
 
 
 .carrucel ul {
+
+
     display: flex;
     padding: 0;
     width: 400%;
-    animation: slide 5s infinite alternate ease-in-out;
+    animation: slide 10s infinite alternate ease-in-out;
 }
 
 .carrucel li {
@@ -65,15 +73,42 @@ nav a.activo{
 
 
 @keyframes slide {
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
+    0% {
+        margin-left: 0;
+    }
 
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
+    20% {
+        margin-left: 0;
+    }
 
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
+    25% {
+        margin-left: -100%;
+    }
 
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+
+.flecha{
+    height: auto;
+    width: 50px;
+    margin: 0 auto;
+    display: flex;
 }
