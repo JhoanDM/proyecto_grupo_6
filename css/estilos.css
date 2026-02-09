@@ -45,15 +45,18 @@ nav a.activo{
 
 .carrucel {
     width: 1280px;
-    height: auto;
+    height: 750px;
+    /*height: auto;*/
     margin: 50px auto 0;
+    border: 2px solid black;
+    overflow: hidden;
 }
 
 
 .carrucel ul {
     display: flex;
     padding: 0;
-    width: 400%;
+    /*width: 400%;*/
     animation: slide 5s infinite alternate ease-in-out;
 }
 
@@ -66,14 +69,11 @@ nav a.activo{
 
 @keyframes slide {
     0% {margin-left: 0;}
-    20% {margin-left: 0;}
+    30% {margin-left: 0;}
 
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
+    35% {margin-left: -200%;}
+    65% {margin-left: -200%;}
 
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-
-    75% {margin-left: -300%;}
+    70% {margin-left: -300%;}
     100% {margin-left: -300%;}
 }
