@@ -200,12 +200,14 @@ main h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.footer {
-
+footer {
+    gap: 30px;
+    padding: 30px;
     background-color:white;
     color: black;
     text-align: center;
     padding: 15px;
     border-bottom: 2px solid #000;
+    border: #000 1px solid;
     
 }
