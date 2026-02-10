@@ -16,6 +16,7 @@ header {
     background-color: white;
     color: rgb(14, 13, 13);
     padding: 30px;
+    border: #000 1px solid;
 }
 
 /* RESET BÁSICO */
@@ -27,30 +28,27 @@ header {
 }
 
 /* HEADER */
-.header {
-    width: 100%;
-   
-    background-color: white;
-    border-bottom: 2px solid #000;
+header {
+    justify-content: space-between;
+}
+
+header .user-actions {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 20px;
 
-    padding: 0 60px;
+}
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 /* LOGO */
-.logo-page {
-    width: 150px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
-}
-
-.logo span {
-    font-size: 22px;
+.logo {
+    height: 50px;
+    width: auto;
+    margin: 9px;
 }
 
 /* NAV */
@@ -70,8 +68,9 @@ header {
 /* AUTENTICACIÓN */
 .auth {
     display: flex;
+
     align-items: center;
-    gap: 10px;
+    gap: 30px;
 }
 
 .auth a {
@@ -210,4 +209,13 @@ footer {
     border-bottom: 2px solid #000;
     border: #000 1px solid;
     
+}
+.d1 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    
+}
+ .d1 p {
+    margin-top: 15px;
 }
