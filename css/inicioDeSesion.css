@@ -22,18 +22,21 @@ body {
 }
 
 .logo {
-    margin-bottom: 40px;
+    margin-bottom: 150px;
     translate: translateX(-100%);
 }
 
 .logo img {
-    max-width: 250px;
+    height: 50px;
+    width: auto;
     display: block;
 }
 
 .login h1 {
     margin-bottom: 20px;
 }
+
+
 
 .roles {
     display: flex;
