@@ -1,0 +1,5 @@
+Juan Herrera;10:15 AM;24/11/2025;Jhoan Sebastian;Corte Clasico;25000;3000;Efectivo;35 min;Terminado;Muy satisfecho
+Andres Lopez;11:20 AM;03/11/2025;Jesus Colmenares;Corte + Barba;45000;5000;Nequi;55 min;Terminado;Cliente recurrente 
+Carlos Rueda;12:10 PM;12/11/2025;Daniela Godo;Barba;20000;0;Tranferencia;25 min;Cancelado;Cancelado por el cliente
+Kevin Pineda;2:30 PM;16/11/2025;Jesus Colmenares;Corte Fade;30000;2000;Efectivo;40 min;Apartado;Aparto Turno
+Oscar Rojas;9:00 AM;31/11/2025;Daniela Godo;Barba;20000;6000;Efectivo;30 min;Terminado;Volvera pronto  

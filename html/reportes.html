@@ -6,8 +6,9 @@
     <title>Reportes</title>
     <link rel="stylesheet" href="/css/inicioDeSesion.css">
 </head>
-<body>
-    <header class="top">
+<body class="paginaReportes">
+      
+    <header class="headerMaq">
         <div class="logo">
             <img src="/img/logo sin fondo.png" alt="Book&Cut">
         </div>
@@ -18,17 +19,53 @@
             <button class="BotonDefecto">Servicios</button>
             <button class="BotonDefecto">Barberos</button>
         </nav>
+
         <div class="usuarioInfo">
            <span class="bienvenida">Bienvenido Jhoan</span>
-           <button class="btnLogOut" onclick="cerrarsesion()">Cerrar Sesion</button>
+           <button class="btnLogOut" onclick="cerrarSesion()">Cerrar Sesion</button>
         </div>
     </header>
 
-    <main class="contenedor">
-        <h2 class="tabla">TABLA GENERAL DE REPORTES</h2>
-        <div class="filtro">
+
+    <main class="contenido">
+        <h2>TABLA GENERAL DE REPORTES</h2>
+
+        <br>
+
             <label>Cliente:</label>
-        </div>
+            <select id="clienteSelect" onchange="cargarTXT()">
+                <option value="">Seleccione un cliente</option>
+            </select>
+
+            <div class="acciones">
+                <button class="BotonDefecto" onclick="agregarFila()">+</button>
+                <button class="BotonDefecto" onclick="eliminarFila()">-</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Hora</th>
+                        <th>Fecha</th>
+                        <th>Barbero</th>
+                        <th>Servicio</th>
+                        <th>Precio</th>
+                        <th>Propina</th>
+                        <th>Metodo de pago</th>
+                        <th>Duracion</th>
+                        <th>Estado del Servicio</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaBody"></tbody>
+            </table>
+
+            <canvas id="grafico" width="500" height="200"></canvas>
+
     </main>
+
+    <script src="/js/reportes.js"></script>
+    
 </body>
 </html>
