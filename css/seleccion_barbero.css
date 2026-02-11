@@ -1,0 +1,120 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: white;
+    color: rgb(14, 13, 13);
+    padding: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Título */
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Lista de barberos */
+.barber-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* 👈 permite que bajen en pantallas pequeñas */
+}
+
+/* Tarjeta de barbero */
+.barber-card {
+    background-color: #fff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: solid 2px black;
+}
+
+.barber-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen */
+.barber-card img {
+    
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Nombre */
+.barber-card h2 {
+    margin-bottom: 10px;
+    color: #111;
+}
+
+/* Descripción */
+.barber-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Botón */
+.select-button {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.select-button:hover {
+    background-color: #444;
+}
+
+.user-actions {
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.accion button {
+    margin: 0 5px;
+    gap: 15px;
+}
+

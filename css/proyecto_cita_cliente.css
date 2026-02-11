@@ -30,7 +30,7 @@ header {
 /* HEADER */
 .header {
     width: 100%;
-   
+
     background-color: white;
     border-bottom: 2px solid #000;
     display: flex;
@@ -66,7 +66,7 @@ header {
     border: 1px solid #000;
     padding: 4px 10px;
     font-size: 14px;
-    
+
 }
 
 .tabs {
@@ -148,14 +148,15 @@ header .user-actions {
     display: flex;
     align-items: center;
     gap: 20px;
-    
+
 
 }
+
 header .logo {
     display: flex;
     align-items: center;
     gap: 30px;
-    
+
 }
 
 p {
@@ -163,15 +164,13 @@ p {
     margin-bottom: 1rem;
 }
 
-.user-actions {
-    gap: 20px;
-    justify-content: flex-end;
-}
 
 .user-actions {
     text-align: center;
     align-items: center;
     gap: 10px;
+    gap: 20px;
+    justify-content: flex-end;
 }
 
 .accion button {
