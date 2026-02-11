@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ccc;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 100vh;
+}
+
+.login {
+    background-color: #eaeaea;
+    padding: 40px;
+}
+
+.logo {
+    margin-bottom: 150px;
+    translate: translateX(-100%);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.login h1 {
+    margin-bottom: 20px;
+}
+
+
+
+.roles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.BotonDefecto {
+    border: 1px solid black;
+    padding: 6px 14px;
+    background-color: white;
+    color: black;
+    box-shadow: 2px 2px black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    height: 40px;
+    width: 180px;
+    font-size: 150%;
+}
+
+.BotonDefecto.activo {
+    background-color: #2f80ed;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+}
+
+.link {
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.btnLogin {
+    background-color: #2f80ed;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.registro {
+    margin-top: 20px;
+}
+
+.imagen {
+    background-image: url("/img/barberia.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.Titulo {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.descripcion {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.inputIcono {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.inputIcono input {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+}
+
+.inputIcono span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-80%);
+    opacity: 0.5;
+}
+
+.terminos {
+    font-size: 13px;
+    margin: 10px 0 20px;
+}
+
+.terminos a {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.volver {
+    margin-top: 20px;
+    background: transparent;
+    border: 2px solid black;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+.volver:hover {
+    background: black;
+    color: white;
+}
+
+.tituloLogin {
+    text-align: center;
+    margin-bottom: 25px;
+}
