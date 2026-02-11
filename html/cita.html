@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Book&Cut - Citas</title>
+  <link rel="stylesheet" href="/css/estiloGLOBAL.css">
+  <link rel="icon" href="/css/estiloGLOBAL.css">
+  <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+ <header>
+            <div>
+                <img class="logo" src="/img/logo sin fondo.png" alt="logo" />
+            </div>
+            <nav>
+                <div>
+                    <a href="#Servicios" class="BotonDefecto"> Servicios </a>
+                    <a href="#Locales" class="BotonDefecto"> Locales </a>
+                </div>
+                <div>
+                    <a href="#" class="BotonDefecto"> Iniciar Sesion </a>
+                    <a href="#" class="BotonDefecto activo"> Registrarse </a>
+                </div>
+            </nav>
+        
+    </header>
+
+<body>
+
+  <main class="container">
+    <h2 class="section-title">Gestión de Citas</h2>
+
+    <div class="dashboard">
+      <section class="card">
+        <h3>Próximas Citas</h3>
+
+        <div class="appointment">
+          <div>
+            <strong>10:00 - Jesús Torres</strong>
+            <p>corte + barba</p>
+          </div>
+          <button class="eye" onclick="window.location.href='infCitas.html?hora=10:00&cliente=Jesús Torres&servicios=corte + barba'">Ver</button>
+        </div>
+
+        <div class="appointment">
+          <div>
+            <strong>11:00 - Diego Ramo</strong>
+            <p>Corte + cejas</p>
+          </div>
+          <button class="eye" onclick="window.location.href='infCitas.html?hora=11:00&cliente=Diego Ramo&servicios=Corte + cejas'">Ver</button>
+        </div>
+
+        <div class="appointment">
+          <div>
+            <strong>12:00 - Diego Samuel</strong>
+            <p>Corte + cejas</p>
+          </div>
+          <button class="eye" onclick="window.location.href='infCitas.html?hora=12:00&cliente=Diego Samuel&servicios=Corte + cejas'">Ver</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Estado del Día</h3>
+
+        <ul class="stats">
+          <li>Citas hoy: <strong>7</strong></li>
+          <li>Completadas: <strong>3</strong></li>
+          <li>Pendientes: <strong>4</strong></li>
+        </ul>
+
+        <div class="chart-container">
+  <canvas id="estadoChart"></canvas>
+</div>
+
+          
+        </div>
+      </section>
+    </div>
+  </main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="../js/cita.js"></script>
+
+</body>
+</html>
