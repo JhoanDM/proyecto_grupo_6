@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Book&Cut - Citas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo">
+      <span class="icon">✂️</span>
+      <strong>Book&Cut</strong>
+      <button class="tab">Citas</button>
+    </div>
+
+    <div class="user">
+      <span class="welcome">Bienvenido Jesús</span>
+      <button class="logout">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Gestión de Citas</h2>
+
+    <div class="dashboard">
+      <section class="card">
+        <h3>Próximas Citas</h3>
+
+        <div class="appointment">
+          <div>
+            <strong>10:00 - Jesús Torres</strong>
+            <p>corte + barba</p>
+          </div>
+          <span class="eye"></span>
+        </div>
+
+        <div class="appointment">
+          <div>
+            <strong>11:00 - Diego Ramo</strong>
+            <p>Corte + cejas</p>
+          </div>
+          <span class="eye">eyes</span>
+        </div>
+
+        <div class="appointment">
+          <div>
+            <strong>12:00 - Diego Samuel</strong>
+            <p>Corte + cejas</p>
+          </div>
+          <span class="eye">👁️</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Estado del Día</h3>
+
+        <ul class="stats">
+          <li>Citas hoy: <strong>7</strong></li>
+          <li>Completadas: <strong>3</strong></li>
+          <li>Pendientes: <strong>4</strong></li>
+        </ul>
+
+        <div class="chart-placeholder">
+          Gráfico aquí
+        </div>
+      </section>
+    </div>
+  </main>
+
+</body>
+</html>
