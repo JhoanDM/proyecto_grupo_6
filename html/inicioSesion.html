@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesion</title>
+    <link rel="stylesheet" href="/css/inicioDeSesion.css">
+</head>
+<body>
+    <div class="contenedor">
+
+        <div class="login">
+
+            <div class="logo">
+                <img src="/img/logo sin fondo.png" alt="Book&Cut">
+            </div>
+
+            <h1 class="tituloLogin">Inicio de Sesión</h1>
+
+<!--botones rol-->
+            <div class="roles">
+                <button class="BotonDefecto activado" onclick="seleccionarRol(this)">Barbero</button>
+                <button class="BotonDefecto" onclick="seleccionarRol(this)">Cliente</button>
+                <button class="BotonDefecto" onclick="seleccionarRol(this)">Administrador</button>
+            </div>
+
+            <form>
+                <label>Correo Electronico</label>
+                <input type="email">
+
+                <label>Contraseña</label>
+                <input type="password">
+
+                <a href="olvido.html" class="link">¿Olvidaste tu contraseña?</a>
+
+                <button type="button"class="btnLogin">INICIAR SESION</button>
+            </form>
+
+            <P Class="registro">
+                ¿No tienes una cuenta? <a href="registro.html">Registrarse ahora</a>
+            </P>
+
+            <button type="button" class="volver" onclick="history.back()">atras</button>
+        </div>
+
+        <div class="imagen"></div>
+    </div>
+
+    <script src="/js/Sesion.js"></script>
+</body>
+</html>
