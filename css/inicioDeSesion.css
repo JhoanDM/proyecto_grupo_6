@@ -1,11 +1,13 @@
-*{
-     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .contenedor {
     display: grid;
     grid-template-columns: 40% 60%;
     height: 100vh;
 }
+
 .login {
     background-color: #eaeaea;
     padding: 40px;
@@ -22,7 +24,7 @@
     height: 70px;
     width: auto;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
 }
 
 
@@ -33,17 +35,6 @@
     margin-bottom: 25px;
 }
 
-.BotonDefecto {
-    border: 1px solid black;
-    padding: 6px 14px;
-    background-color: white;
-    color: black;
-    box-shadow: 2px 2px black;
-    cursor: pointer;
-    height: 40px;
-    width: 180px;
-    font-size: 150%;
-}
 
 .BotonDefecto.activo {
     background-color: #2f80ed;
@@ -61,7 +52,9 @@ label {
     font-weight: bold;
 }
 
+
 input {
+    border-radius: 5px;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #000;
@@ -74,13 +67,10 @@ input {
 }
 
 .btnLogin {
-    background-color: #2f80ed;
-    color: white;
-    border: none;
     padding: 12px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
+    margin: 0 0 10px 0;
 }
 
 .registro {
@@ -123,7 +113,6 @@ input {
 
 .terminos {
     font-size: 13px;
-    margin: 10px 0 20px;
 }
 
 .terminos a {
@@ -132,23 +121,6 @@ input {
     margin-bottom: 5px;
 }
 
-.volver {
-    margin-top: 20px;
-    background: transparent;
-    border: 2px solid black;
-    color: black;
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    align-self: center;
-}
-
-.volver:hover {
-    background: #2f80ed;
-    color: white;
-}
 
 .tituloLogin {
     text-align: center;
