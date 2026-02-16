@@ -81,7 +81,7 @@ button {
 
 /* Main container */
 .contenedor-foto {
-    background-image: url('Imagenes/cliente_barberia.jpg');
+    background-image: url('../img/cliente_barberia.jpg');
     width: 300px;
     height: 300px;
     border: 2px solid #000;

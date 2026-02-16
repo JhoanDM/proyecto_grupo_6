@@ -23,7 +23,7 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
     height: 50px;
     width: auto;
     max-width: 100%;
@@ -106,15 +106,20 @@ header {
 }
 
 .user-actions {
+    display: flex;
     text-align: center;
     align-items: center;
-    gap: 10px;
-    gap: 20px;
     justify-content: flex-end;
 }
 
 .accion button {
     margin: 0 5px;
     gap: 15px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
