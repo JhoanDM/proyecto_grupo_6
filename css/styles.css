@@ -8,19 +8,32 @@ body {
   background: #f4f4f4;
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  border-bottom: 2px solid #000;
-  padding: 10px 20px;
+.BotonDefecto {
+    border: 1px solid black;
+    padding: 2px 6px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    box-shadow: 2px 2px black;
+    margin: 6px;
+}
+
+
+
+
+nav a:hover {
+    background-color: rgb(149, 149, 255);
+}
+
+nav a.activo {
+    background-color: rgb(0, 119, 255);
+    color: white;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    height: 50px;
+    width: auto;
+    margin: 9px;
 }
 
 .tab {
@@ -63,7 +76,11 @@ body {
   background: #fff;
   border: 2px solid #000;
   padding: 15px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
 }
+
 
 .card h3 {
   background: #d9d9d9;
@@ -72,21 +89,16 @@ body {
   text-align: center;
 }
 
+
 .appointment {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  padding: 12px 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
-.appointment p {
-  margin: 5px 0 0;
-  font-size: 14px;
-}
-
-.eye {
-  cursor: pointer;
-}
 
 .stats {
   list-style: none;
@@ -101,4 +113,21 @@ body {
   align-items: center;
   justify-content: center;
   color: #666;
+}
+
+.chart-container {
+  flex-grow: 1;
+  margin-top: 30px;
+  height: 260px;
+}
+
+.appointment strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.appointment p {
+  font-size: 14px;
+  color: #555;
 }
