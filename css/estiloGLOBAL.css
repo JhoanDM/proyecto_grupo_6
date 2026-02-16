@@ -22,7 +22,7 @@ header {
     display: flex;
     justify-content: space-around;
     transition: 0.7s;
-    background-color: #cccccc;
+    background-color: #b7b7b7;
     padding: 10px 20px;
     z-index: 10;
     box-sizing: border-box;
@@ -36,6 +36,7 @@ header.abajo {
     height: 50px;
     width: auto;
     max-width: 100%;
+    margin: 10px;
 }
 
 nav {

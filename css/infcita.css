@@ -1,0 +1,113 @@
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 2px solid #000;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.tab {
+  border: 2px solid #000;
+  background: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.user {
+  text-align: right;
+}
+
+.welcome {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.logout {
+  background: #2979ff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.container {
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.section-title {
+  border: 2px solid #000;
+  background: #e0e0e0;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 15px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  background: #d9d9d9;
+  padding: 10px;
+  margin: -15px -15px 15px -15px;
+  text-align: center;
+}
+
+.appointment-detail p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  background: #0760fa;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background: #1e5bbf;
+}
+
+nav a.activo {
+    background-color: rgb(0, 119, 255);
+    color: white;
+}
