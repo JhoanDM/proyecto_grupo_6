@@ -1,0 +1,5 @@
+Corte Clasico;7;175000;21%;33 min;Bajo;Superior
+Corte + Barba;8;360000;24%;53 min;Medio;alto
+Corte Fade;6;180000;18%;41 min;Medio;medio
+Corte + Tinte;4;240000;12%;27 min;Bajo;alto
+Corte Ejecutivo;3;100000;15%;1h 08min;Alto;Bajo
