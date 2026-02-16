@@ -6,35 +6,39 @@
     <title>Reportes</title>
     <link rel="stylesheet" href="/css/inicioDeSesion.css">
 </head>
+
 <body class="paginaReportes">
       
     <header class="headerMaq">
+
         <div class="logo">
             <img src="/img/logo sin fondo.png" alt="Book&Cut">
         </div>
 
         <nav class="menu">
-            <button class="BotonDefecto activo">Inicio</button>
-            <button class="BotonDefecto">Ventas</button>
-            <button class="BotonDefecto">Servicios</button>
-            <button class="BotonDefecto">Barberos</button>
+            <button class="BotonDefecto activo" onclick="cambiarSeleccion(this)">Inicio</button>
+            <button class="BotonDefecto" onclick="cambiarSeleccion(this)">Ventas</button>
+            <button class="BotonDefecto" onclick="cambiarSeleccion(this)">Servicios</button>
+            <button class="BotonDefecto" onclick="cambiarSeleccion(this)">Barberos</button>
         </nav>
 
         <div class="usuarioInfo">
            <span class="bienvenida">Bienvenido Jhoan</span>
            <button class="btnLogOut" onclick="cerrarSesion()">Cerrar Sesion</button>
         </div>
+
     </header>
 
 
     <main class="contenido">
-        <h2>TABLA GENERAL DE REPORTES</h2>
+
+        <h2 id="tituloTabla">TABLA GENERAL DE REPORTES</h2>
 
         <br>
 
-            <label>Cliente:</label>
-            <select id="clienteSelect" onchange="cargarTXT()">
-                <option value="">Seleccione un cliente</option>
+            <label id="labelFiltro">Seleccione Cliente:</label>
+            <select id="clienteSelect" onchange="cargarDatos()">
+                <option value="">Seleccione</option>
             </select>
 
             <div class="acciones">
@@ -58,14 +62,15 @@
                         <th>Observaciones</th>
                     </tr>
                 </thead>
+
                 <tbody id="tablaBody"></tbody>
             </table>
 
-            <canvas id="grafico" width="500" height="200"></canvas>
+            <canvas id="grafico" width="600" height="250"></canvas>
 
     </main>
 
     <script src="/js/reportes.js"></script>
-    
+
 </body>
 </html>
