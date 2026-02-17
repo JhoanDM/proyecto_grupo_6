@@ -1,121 +1,190 @@
-let registros = [];
+let datos = [];
+let seccionActual= "reporteGeneral";
 
-document.addEventListener("DOMContentLoaded", () => {
-    fetch("reporteGeneral.txt")
-    .then(response => response.text())
-    .then(texto => {
-        procesarTXT(texto);
-        llenarSelectClientes();
+document.addEventListener("DOMContentLoaded", function () {
+
+    const botones = document.querySelectorAll("nav button");
+
+    botones.forEach(boton => {
+        boton.addEventListener("click", function () {
+
+            document.querySelectorAll("nav button")
+                .forEach(b => b.classList.remove("active"));
+
+            this.classList.add("active");
+
+            seccionActual = this.dataset.seccion;
+
+            actualizarTitulo();
+            cargarArchivo(seccionActual);
+            
         });
     });
 
+    actualizarTitulo();
+    cargarArchivo("reporteGeneral");
+});
 
-function procesarTXT(texto) {
-    const lineas = texto.trim().split("\n");
+function actualizarTitulo() {
 
-    registros = lineas.map(linea => {
-        const datos = linea.split(";");
-        return {
-            Cliente: datos[0],
-            Hora: datos[1],
-            Fecha: datos[2],
-            Barbero: datos[3],
-            Servicio: datos[4],
-            Precio: parseInt(datos[5]),
-            Propina: parseInt(datos[6]),
-            MetodoDePago: datos[7],
-            Duracion: datos[8],
-            EstadoDelServicio: datos[9],
-            Observaciones: datos[10]
-        };
-    });
+    const titulo = document.getElementById("tituloTabla")
+    const label = document.getElementById("labelFiltro");
+
+    if (seccionActual === "reporteGeneral") {
+        titulo.textContent = "TABLA GENERAL DE REPORTES";
+        label.textContent = "Seleccione Cliente:";
+    }
+
+    if (seccionActual === "reporteVentas") {
+        titulo.textContent = "TABLA DE VENTAS";
+        label.textContent = "Metodo de Pago:";
+    }
+
+    if (seccionActual === "reporteServicios") {
+        titulo.textContent = "TABLA DE SERVICIOS";
+        label.textContent = "Servicio:";
+    }
+
+    if (seccionActual === "reporteBarberos") {
+        titulo.textContent = "TABLA DE BARBEROS";
+        label.textContent = "Barbero:";
+    }
 }
 
+function cargarArchivo(nombre) {
 
-function llenarSelectClientes() {
+    fetch(`/datos/${nombre}.txt`)
+        .then(response => response.text())
+        .then(texto => {
+
+            const lineas = texto.trim().split("\n");
+            datos = lineas.map(linea => linea.split(";"));
+
+            actualizarEncabezados();
+            llenarSelect();
+            limpiarTabla();
+            limpiarGrafico();
+        })
+        .catch(error => {
+            console.error("Error al cargar el archivo:", error);
+        });
+}
+
+function actualizarEncabezados() {
+
+    const thead = document.querySelector("thead tr");
+    thead.innerHTML = "";
+
+    let encabezados = [];
+
+    if (seccionActual === "reporteGeneral") {
+        encabezados = ["Cliente", "Hora", "Fecha", "Barbero", "Servicio", "Precio", "Propina", "Metodo de Pago", "Duracion", "Estado", "Observaciones"];
+}
+    if (seccionActual === "reporteVentas") {
+        encabezados = ["Fechas", "Total Servicios", "Total Vendido", "Total Propinas", "Venta Promedio", "Servicios Premium", "Ventas Efectivo", "Ventas Electronicas"];
+    }
+    
+    if (seccionActual === "reporteServicios") {
+        encabezados = ["Servicio", "Cantidad Realizada", "Ingreso Total", "% de Demanda", "Tiempo Promedio", "Nivel de Complejidad", "Satisfacción Promedio"];
+    }
+
+    if (seccionActual === "reporteBarberos") {
+        encabezados = ["Barbero", "Servicios Realizados", "Ingresos Generados", "Propinas Recibidas", "Calificacion Promedio", "Tiempo Total", "Servicios Mejor Calificados", "% Clientes Nuevos", "% Clientes Recurrentes"];
+    }
+
+    encabezados.forEach(texto => {
+        let th = document.createElement("th");
+        th.textContent = texto;
+        thead.appendChild(th);
+    });
+
+}
+function llenarSelect() {
     const select = document.getElementById("clienteSelect");
-    const clientesUnicos = [...new Set(registros.map(r => r.Cliente))];
+    select.innerHTML = "<option value=''>Seleccione</option>";
 
-    clientesUnicos.forEach(Cliente => {
+    const valoresUnicos = [...new Set(datos.map(d => d[0]))];
+
+    valoresUnicos.forEach(valor => {
         const option = document.createElement("option");
-        option.value = Cliente;
-        option.textContent = Cliente;
+        option.value = valor;
+        option.textContent = valor;
         select.appendChild(option);
     });
 }
 
-
-function cargarTXT() {
-    const cliente = document.getElementById("clienteSelect").value;
+function cargarDatos() {
+    const valorSeleccionado = document.getElementById("clienteSelect").value;
     const tbody = document.getElementById("tablaBody");
     tbody.innerHTML = "";
 
-    if (!cliente)  return;
+    let datosFiltrados = datos;
 
-    const datosCliente = registros.filter(r => r.Cliente === Cliente);
-
-    datosCliente.forEach(d => {
-        const fila = document.createElement("tr");
-        fila.innerHTML = `
-            <td>${d.Cliente}</td>
-            <td>${d.Hora}</td>
-            <td>${d.Fecha}</td>
-            <td>${d.Barbero}</td>
-            <td>${d.Servicio}</td>
-            <td>${d.Precio}</td>
-            <td>${d.Propina}</td>
-            <td>${d.MetodoDePago}</td>
-            <td>${d.Duracion}</td>
-            <td>${d.EstadoDelServicio}</td>
-            <td>${d.Observaciones}</td>
-        `;
-
-        tbody.appendChild(fila);
-    });
-    
-    dibujarGrafico(datosCliente);
+    if (valorSeleccionado !== "") {
+        datosFiltrados = datos.filter(d => d[0] === valorSeleccionado);
 }
+
+datosFiltrados.forEach(fila => {
+    let tr = document.createElement("tr");
+
+    fila.forEach(celda => {
+        let td = document.createElement("td");
+        td.textContent = celda;
+        tr.appendChild(td);
+    });
+
+    tbody.appendChild(tr);
+});
+
+dibujarGrafico(datosFiltrados);
+
+}
+
+function dibujarGrafico(datosGrafico) {
+    const canvas = document.getElementById("grafico");
+    const ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    datosGrafico.forEach((dato, i) => {
+
+        let valor = parseInt(dato[dato.length - 1]) || 0;
+        let altura = valor / 500;
+
+        ctx.fillStyle = "#0d6efd";
+        ctx.fillRect(80 + (i * 80), 200 - altura, 40, altura);
+    });
+}
+
+
+function limpiarTabla() {
+    document.getElementById("tablaBody").innerHTML = "";
+}
+
+function limpiarGrafico() {
+    const canvas = document.getElementById("grafico");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
 
 function agregarFila() {
     const tbody = document.getElementById("tablaBody");
     const fila = document.createElement("tr");
 
-    fila.innerHTML = `
-        <td>Cliente nuevo</td>
-        <td>00:00</td>
-        <td>--/--/----</td>
-        <td>Barbero</td>
-        <td>Servicio</td>
-        <td>$0</td>
-        <td>$0</td>
-        <td>Metodo de pago</td>
-        <td>0</td>
-        <td>Pendiente</td>
-        <td>Observaciones</td>
-    `;
+    fila.innerHTML = `<td colspan="5">Nueva Fila</td>`;
+     
 
     tbody.appendChild(fila);
 
 }
 
 function eliminarFila() {
+
     const tbody = document.getElementById("tablaBody");
-    if (tbody.ariaRowSpan.length > 0) {
-        tbody.deleteRow(tbody.ariaRowSpan.length - 1);
-    } else {
-        alert("No hay filas para eliminar");
+
+    if (tbody.rows.length > 0) {
+        tbody.deleteRow(tbody.rows.length - 1);
     }
 }
 
-function dibujarGrafico(datos) {
-    const canvas = document.getElementById("grafico");
-    const ctx = canvas.getContext("2d");
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    datos.forEach((d, index) => {
-        const altura = d.precio/500;
-        ctx.fillStyle = "blue";
-        ctx.fillRect(60 + index * 80, 180 - altura, 40, altura);
-    });
-}
