@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* CONTENEDOR */
+.card-servicio{
+    width:850px;
+    background:white;
+    border:2px solid #222;
+    padding:30px;
+    text-align:center;
+    border-radius: 7px;
+}
+
+/* ENCABEZADO */
+.encabezado{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:25px;
+}
+
+.encabezado h2{
+    font-size:22px;
+    letter-spacing:1px;
+}
+
+.duracion{
+    font-size:14px;
+    color:#444;
+    margin-top:5px;
+}
+
+.precio{
+    font-weight:bold;
+    font-size:35px;
+}
+
+/* BOTÓN */
+.btn-agendar{
+    border:2px solid #222;
+    background:white;
+    padding:10px 25px;
+    cursor:pointer;
+    font-size:14px;
+    margin:10px 0 25px 0;
+    transition:0.3s;
+    border-radius: 7px;
+}
+
+.btn-agendar:hover{
+    background:#222;
+    color:white;
+}
+
+
+
+/* TEXTO */
+.descripcion{
+    font-size:14px;
+    color:#333;
+    width:80%;
+    margin:auto;
+}
+
+/* LINK */
+.mas{
+    display:inline-block;
+    margin-top:8px;
+    font-size:12px;
+    text-decoration:underline;
+}
+
+/* imagen */
+img{
+    width:15%;
+    height:auto;
+    margin-top:0;
+   
+}
