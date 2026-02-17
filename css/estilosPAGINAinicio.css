@@ -5,7 +5,9 @@
   scroll-margin-top: 110px;
 }
 
-
+#titulopagina {
+  margin-top: 20px;
+}
 
 /* caruucel de fotos de la peluqueria debe tener el tamaño exacto de las imagenes de ejemplo*/
 .carrucel {
@@ -150,4 +152,10 @@
   .flecha {
     width: 30px;
   }
+}
+
+
+.pie_pagina{
+  border-top: 2px solid black;
+  background-color: white;
 }

@@ -12,14 +12,15 @@
 
 <body>
     <div class="contenedorGlobal">
-        <header>
+        <header class="bg-dark text-white">
             <div>
-                <img class="logo" src="/img/logo sin fondo.png" alt="logo" />
+                <img class="logo" src="../img/output-onlinepngtools.png" alt="logo" />
             </div>
             <nav>
                 <div>
-                    <a href="#Servicios" class="btn btn-outline-dark activado"> Servicios </a>
-                    <a href="#Locales" class="btn btn-outline-dark activado"> Locales </a>
+                    <a href="#Servicios" class="btn btn-outline-light activado"> Servicios </a>
+                    <a href="#Locales" class="btn btn-outline-light activado"> Locales </a>
+
                 </div>
                 <div id="zona-auth"></div>
             </nav>
@@ -27,7 +28,7 @@
 
 
         <section id="inicio" class="pantalla">
-            <h2 class="text-center mb-5">BIENVENIDO A BOOK&CUT</h2>
+            <h2 id="titulopagina" class="text-center mb-5">BIENVENIDO A BOOK&CUT</h2>
             <div class="carrucel">
                 <ul>
                     <li>
@@ -179,7 +180,46 @@
                     <img class="flecha" src="/img/flecha-hacia-abajo-para-navegar.png" alt="" />
                 </a>
             </div>
+            <footer class="bg-dark text-white pt-4 pb-2">
+                <div class="container text-center text-md-start">
+                    <div class="row text-center text-md-start">
+
+                        <!-- Columna 1: Info -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Nombre Empresa</h5>
+                            <p>Dirección Física, Ciudad, CP</p>
+                            <p>Email: contacto@ejemplo.com</p>
+                            <p>Tel: +34 123 456 789</p>
+                        </div>
+
+                        <!-- Columna 2: Enlaces -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Enlaces</h5>
+                            <p><a href="#" class="text-white" style="text-decoration: none;">Inicio</a></p>
+                            <p><a href="#" class="text-white" style="text-decoration: none;">Servicios</a></p>
+                        </div>
+
+                        <!-- Columna 3: Redes Sociales -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Síguenos</h5>
+                            <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #55acee;"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+                    <div class="text-center">
+                        <p>&copy; 2026 Empresa. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </footer>
         </section>
+
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
