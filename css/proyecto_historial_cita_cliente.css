@@ -1,0 +1,52 @@
+.logo span {
+    font-size: 22px;
+}
+
+
+.tabs {
+    margin: 30px;
+    text-align: center;
+}
+
+
+.contenedor-historial {
+    border-radius: 5px;
+    width: 90%;
+    margin: 30px auto;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+.titulo {
+    padding: 10px;
+    border-bottom: 1px solid #000;
+    margin: 0;
+}
+
+.cita {
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 2fr 1fr;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #000;
+}
+
+.cita:last-child {
+    border-bottom: none;
+}
+
+.info p,
+.ubicacion p,
+.servicio p {
+    margin: 4px 0;
+}
+
+.servicio {
+    text-align: left;
+}
+
+.accion {
+    display: flex;
+    justify-content: center;
+}

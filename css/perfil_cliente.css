@@ -21,7 +21,7 @@ body {
 
 .logo {
     display: flex;
-    
+
     padding-right: 20px;
     align-items: center;
     gap: 10px;
@@ -46,7 +46,7 @@ button {
     border: 1px solid #000;
     background: #fff;
     padding: 4px 10px;
-   
+
 }
 
 .btn-primary {
@@ -54,7 +54,7 @@ button {
     color: #fff;
     border: none;
     padding: 6px 12px;
-   
+
 }
 
 .btn-secondary {
@@ -67,32 +67,27 @@ button {
 .tabs {
     margin: 30px;
     text-align: center;
+    position: relative;
+
 }
 
-.tab {
-    border: 1px solid #000;
-    background: #fff;
-    padding: 5px 10px;
-}
-
-.tab.active {
-    background: #ddd;
-}
 
 /* Main container */
 .contenedor-foto {
-    background-image: url('/img/barbero_Jabier_Rincon.jpeg');
+    background-image: url('../img/cliente_barberia.jpg');
+    border-radius: 5px;
     width: 300px;
     height: 300px;
     border: 2px solid #000;
     background-size: cover;
     background-position: center;
-    
- 
+
+
 }
 
 .container {
     background: #fff;
+    border-radius: 5px;
     /*margin: 0 20px 20px;*/
     padding: 20px;
     display: flex;
@@ -104,10 +99,11 @@ button {
     text-align: center;
     margin-top: 10px;
 }
+
 .boton-cambiar-foto {
     display: flex;
-    margin-top:  320px;
-   
+    margin-top: 320px;
+
 }
 
 
@@ -141,6 +137,7 @@ label {
 }
 
 input {
+    border-radius: 5px;
     padding: 6px;
     border: 1px solid #000;
 }
@@ -151,13 +148,13 @@ input {
 }
 
 .user-actions {
-    
+
     gap: 20px;
     justify-content: flex-end;
 }
 
 .welcome {
-right: 10%;
+    right: 10%;
 }
 
 .imagenlogo {
@@ -177,8 +174,10 @@ right: 10%;
     display: flex;
     align-content: center;
     align-items: center;
+    gap: 10px;
 }
 
 .d1 p {
     margin-top: 10px;
+
 }
