@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/estiloGLOBAL.css" />
+    <link rel="stylesheet" href="/css/inicioDeSesion.css">
+</head>
+
+<body class="paginaReportes">
+
+    <header>
+        <div>
+            <img class="logo" src="/img/logo sin fondo.png">
+        </div>
+
+        <nav>
+            <div>
+                <button class="btn btn-outline-dark activado">Inicio</button>
+                <button class="btn btn-outline-dark activado">Ventas</button>
+                <button class="btn btn-outline-dark activado">Servicios</button>
+                <button class="btn btn-outline-dark activado">Barberos</button>
+            </div>
+
+            <div id="zona-auth"></div>
+        </nav>
+    </header>
+
+
+
+    <main class="contenido">
+
+        <h2 id="tituloTabla">TABLA GENERAL DE REPORTES</h2>
+
+        <br>
+
+        <label id="labelFiltro">Seleccione Cliente:</label>
+        <select id="clienteSelect" onchange="cargarDatos()">
+            <option value="">Seleccione</option>
+        </select>
+
+        <div class="acciones">
+            <button class="btn btn-outline-dark activado" onclick="agregarFila()">+</button>
+            <button class="btn btn-outline-dark activado" onclick="eliminarFila()">-</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Hora</th>
+                    <th>Fecha</th>
+                    <th>Barbero</th>
+                    <th>Servicio</th>
+                    <th>Precio</th>
+                    <th>Propina</th>
+                    <th>Metodo de pago</th>
+                    <th>Duracion</th>
+                    <th>Estado del Servicio</th>
+                    <th>Observaciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaBody"></tbody>
+        </table>
+
+        <canvas id="grafico" width="600" height="250"></canvas>
+
+    </main>
+
+    <script src="/js/reportes.js"></script>
+    <script src="/js/auth.js"></script>
+
+</body>
+
+</html>
