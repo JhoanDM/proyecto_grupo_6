@@ -8,23 +8,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/estiloGLOBAL.css" />
     <link rel="stylesheet" href="/css/estilosPAGINAinicio.css" />
+    <link rel="stylesheet" href="../css/estilo-vista-movil.css">
 </head>
 
 <body>
     <div class="contenedorGlobal">
-        <header class="bg-dark text-white">
-            <div>
-                <img class="logo" src="../img/output-onlinepngtools.png" alt="logo" />
-            </div>
-            <nav>
-                <div>
-                    <a href="#Servicios" class="btn btn-outline-light activado"> Servicios </a>
-                    <a href="#Locales" class="btn btn-outline-light activado"> Locales </a>
+        <div class="row">
+            <div class="col-12 col-xs-6">
+                <header id="encabezado" class="bg-dark text-white">
+                    <div>
+                        <a href="#inicio"> <img class="logo" src="../img/output-onlinepngtools.png" alt="logo" /></a>
 
-                </div>
-                <div id="zona-auth"></div>
-            </nav>
-        </header>
+                    </div>
+                    <nav>
+                        <div>
+                            <a href="#Servicios" class="btn btn-outline-light activado nav-item"> Servicios </a>
+                            <a href="#Locales" class="btn btn-outline-light activado nav-item"> Locales </a>
+
+                        </div>
+                        <div id="zona-auth"></div>
+                    </nav>
+                </header>
+            </div>
+
+        </div>
 
 
         <section id="inicio" class="pantalla">
@@ -51,7 +58,7 @@
             <br />
             <div>
                 <a href="#Servicios">
-                    <img class="flecha" src="/img/flecha-hacia-abajo-para-navegar.png" alt="" />
+                    <img class="flecha animate-bounce" src="/img/flecha-hacia-abajo-para-navegar.png" alt="" />
                 </a>
             </div>
         </section>
@@ -59,7 +66,7 @@
         <section id="Servicios" class="pantalla">
 
             <div class="container">
-                <h2 class="text-center mb-5">AGENDA TU CITA</h2>
+                <h2 id="servicios-titulo" class="text-center mb-5">AGENDA TU CITA</h2>
 
                 <div class="row g-4">
                     <div class="col-12 col-sm-6 col-lg-4">
@@ -160,26 +167,47 @@
 
         <section id="Locales" class="pantalla">
             <h2 class="text-center mb-5">CONOCE NUESTROS LOCALES</h2>
-            <div class="contenedor-mapas">
-                <div class="mapa1">
-                    <iframe
+            <div id="contenedor-mapas" class="d-flex justify-content-sm-around">
+                <div>
+                    <iframe class="mapas border border-dark rounded"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5311882168758!2d-73.09823112500221!3d7.064236992938298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f643971869b%3A0x204f2fcef3291579!2sCentro%20Industrial%20Del%20Dise%C3%B1o%20y%20La%20Manufactura%20SENA!5e0!3m2!1ses-419!2sco!4v1770729345156!5m2!1ses-419!2sco"
                         width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
 
-                    <iframe
+
+                    </iframe>
+                    <p>Kilómetro 6 Autopista Floridablanca #50-33, Floridablanca, Santander
+                    </p>
+                    <p>
+                        horario: Lunes a Viernes 8:00 a 20:00
+                    </p>
+
+
+                </div>
+                <div>
+
+
+                    <iframe class="mapas border border-dark rounded"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63352.49926015607!2d-73.13685582122488!3d7.0642351780108195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e68156f04227d0d%3A0xed3995d5e22ed85f!2sServicio%20Nacional%20De%20Aprendizaje%20-%20Sena!5e0!3m2!1ses-419!2sco!4v1770729556468!5m2!1ses-419!2sco"
                         width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
+
+                    <p>Cl. 15 #27-37, Bucaramanga, Santander
+                    </p>
+                    <p>
+                        horario: Lunes a Viernes 8:00 a 20:00
+                    </p>
                 </div>
             </div>
             <div>
                 <a href="#inicio">
-                    <img class="flecha" src="/img/flecha-hacia-abajo-para-navegar.png" alt="" />
+                    <img style="transform: scaleY(-1)" class="flecha" src="/img/flecha-hacia-abajo-para-navegar.png"
+                        alt="" />
                 </a>
             </div>
+            <br>
+            <br>
             <footer class="bg-dark text-white pt-4 pb-2">
                 <div class="container text-center text-md-start">
                     <div class="row text-center text-md-start">

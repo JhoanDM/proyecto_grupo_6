@@ -35,10 +35,10 @@ function renderAuth() {
   }
   else {
     zona.innerHTML = `
-      <a href="/html/incio_Sesion/inicioSesion.html" class="btn btn-outline-light me-2">
+      <a href="/html/incio_Sesion/inicioSesion.html" class="btn btn-outline-light me-2 nav-item-login">
         Iniciar Sesión
       </a>
-      <a href="/html/incio_Sesion/registro.html" class="btn btn-outline-light">
+      <a href="/html/incio_Sesion/registro.html" class="btn btn-outline-light nav-item">
         Registrarse
       </a>
     `;
