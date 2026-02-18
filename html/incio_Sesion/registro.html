@@ -48,12 +48,11 @@
                     <span>🔒</span>
                 </div>
 
-                <div class="terminos">
-                    <a href="#">Terminos y Condiciones</a>
+                <div class="terminos mt-3">
+                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+                        data-bs-target="#terminosModal">Ver Términos y Condiciones</button>
 
-                    <p>
-                        Al registrarte, aceptas los Terminos y Condiciones y la Politica de Privacidad de Book&Cut.
-                    </p>
+                    <p class="mt-2">al registrarte, aceptas los terminos y condiciones</p>
                 </div>
 
                 <button type="button" class="btn btn-outline-dark activado BotonDefecto btnLogin">Registrarse</button>
@@ -66,6 +65,110 @@
         <div class="imagen"></div>
     </div>
 
+    <div class="modal fade" id="terminosModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">TERMINOS Y CONDICIONES</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div style="max-height:400px; overflow-y:auto; white-space:pre-line; font-size:15px;">
+                        1. Descripción del servicio
+
+                        Book&Cut es una plataforma web que permite a los usuarios buscar y reservar citas en
+                        peluquerías, barberías y centros de belleza registrados.
+                        El servicio ofrecido por Book&Cut es únicamente de intermediación tecnológica, por lo tanto, no
+                        presta directamente servicios de belleza ni garantiza su ejecución o calidad. Cada
+                        establecimiento es responsable de la atención que brinde al cliente.
+
+                        2. Registro de usuario
+
+                        Para acceder a las funciones del sitio, el usuario deberá crear una cuenta proporcionando
+                        información veraz, completa y actualizada.
+                        El usuario es responsable de la confidencialidad de sus credenciales de acceso (correo y
+                        contraseña) y de todas las actividades realizadas con su cuenta.
+                        Book&Cut podrá suspender o eliminar cuentas que se utilicen de forma fraudulenta o que incumplan
+                        estos Términos y Condiciones.
+
+                        3. Uso adecuado de la plataforma
+
+                        El usuario se compromete a:
+
+                        - Utilizar la página solo para realizar reservas reales.
+                        - No interferir ni intentar alterar el funcionamiento del sitio.
+                        - No utilizar información falsa o de terceros sin autorización.
+
+                        El uso indebido de la plataforma podrá dar lugar a la suspensión definitiva de la cuenta.
+
+                        4. Protección y tratamiento de datos personales
+                        Book&Cut protege la privacidad y seguridad de los datos personales de sus usuarios, conforme a
+                        la Ley 1581 de 2012 y el Decreto 1377 de 2013 sobre protección de datos personales en Colombia.
+
+                        a. Finalidad del tratamiento
+                        Los datos personales que el usuario proporcione al registrarse serán utilizados únicamente para:
+                        - Crear y administrar su cuenta en la plataforma.
+                        - Gestionar y confirmar reservas de citas.
+                        - Enviar recordatorios, notificaciones o actualizaciones del servicio.
+                        - Mejorar la experiencia del usuario dentro del sitio.
+
+                        b. Seguridad de la información
+                        Book&Cut utiliza servidores seguros, protocolos HTTPS y medidas de cifrado para proteger la
+                        información de los usuarios contra accesos no autorizados, pérdida, alteración o divulgación
+                        indebida.
+                        Solo el personal autorizado tiene acceso a la información personal y está sujeto a deberes de
+                        confidencialidad.
+
+                        c. Derechos del usuario
+                        El usuario podrá, en cualquier momento, ejercer sus derechos de conocer, actualizar, rectificar
+                        o eliminar sus datos personales, así como revocar la autorización de uso, enviando una solicitud
+                        al correo electrónico:
+                        centrodeayudacorte25@gmail.com
+
+                        5. Propiedad intelectual
+                        Todo el contenido, logotipos, textos, gráficos, imágenes, software y elementos visuales de
+                        Book&Cut son propiedad exclusiva de la plataforma o de sus respectivos autores.
+                        Está prohibido reproducir, distribuir o modificar el contenido sin autorización previa por
+                        escrito.
+
+                        6. Responsabilidad limitada
+                        Book&Cut no asume responsabilidad por:
+
+                        - La calidad, cumplimiento o disponibilidad de los servicios prestados por los establecimientos.
+                        - Errores u omisiones en la información publicada por los mismos.
+                        - Fallas técnicas o interrupciones en el sitio web ocasionadas por causas ajenas a su control.
+
+                        7. Modificaciones a los términos
+
+                        Book&Cut podrá modificar estos Términos y Condiciones en cualquier momento. Las actualizaciones
+                        se publicarán en esta misma página y entrarán en vigencia a partir de su publicación.
+                        Al continuar usando el sitio después de los cambios, el usuario acepta automáticamente las
+                        modificaciones.
+
+                        8. Legislación aplicable
+
+                        Estos Términos y Condiciones se rigen por las leyes de la República de Colombia, y cualquier
+                        controversia será resuelta por los tribunales competentes del país.
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" id="btnAceptarTerminos" class="btn btn-success" disabled
+                        data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/activarBoton.js"></script>
 </body>
 
 </html>

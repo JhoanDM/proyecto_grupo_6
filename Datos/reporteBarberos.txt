@@ -1,0 +1,8 @@
+Jhoan Sebastian;12;$465.000;$48.000;Superior;8h 20min;Corte + Tinte;25%;75%
+Jesus Colmenares;11;$415.000;$42.000;Medio;7h 55min;Corte Fade;40%;60%
+Daniela Godo;8;$260.000;$13.000;Alto;5h 35min;Barba;30%;70%
+Jhoan Sebastian;5;$180.000;$11.000;Superior;4h 10min;Corte Clasico;35%;65%
+Jesus Colmenares;3;$96.000;$5.000;Bajo;2h 45min;Corte Ejectivo;45%;55%
+Daniela Godo;2;$85.000;$3.000;Medio;1h 30min;Corte mullet;25%;46%
+
+
