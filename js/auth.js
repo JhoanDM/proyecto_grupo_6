@@ -17,10 +17,10 @@ function renderAuth() {
       rutaPerfil = "#";
     }
     else if (usuario.rol === "Barbero") {
-      rutaPerfil = "/html/barbero/perfil_info_barbero.html";
+      rutaPerfil = "../../html/barbero/perfil_info_barbero.html";
     }
     else {
-      rutaPerfil = "/html/cliente/perfil_cliente.html";
+      rutaPerfil = "../../html/cliente/perfil_cliente.html";
     }
 
     zona.innerHTML = `
@@ -47,7 +47,7 @@ function renderAuth() {
 
 function cerrarSesion() {
   localStorage.removeItem("usuario");
-  window.location.href = "/html/pantallaInicio.html";
+  window.location.href = "../../html/pantallaInicio.html";
 }
 
 

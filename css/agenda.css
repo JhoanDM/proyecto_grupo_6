@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+   min-height: 100vh;
+    display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   background: #f5f5f5;
+   padding-top: 20px;
+   padding-left: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.calendar {
+    width: 380px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    top: 80px;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.monthYear {
+    text-align: center;
+    font-weight: 600;
+    width: 150px;
+}
+
+.header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7,1fr)
+}
+
+.day {
+    text-align: center;
+    padding: 5px;
+    color: #999FA6;
+    font-weight: 500;
+}
+
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: 0.2s;
+}
+
+
+.date.active,
+.date.selected {
+    background: #ff5869;
+    color: #fff;
+}
+
+.date.selected:not(.active) {
+    background: #4a90e2;
+}
+
+.date.inactive {
+    color: #d2d2d2;
+}
+
+.date.inactive:hover {
+    color: #fff;
+}
+
+.time-agenda {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 80px
+}
+
+.time-agenda h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.time-slot {
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #f9f9f9;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.time-slot:hover {
+    border-color: #ff5869;
+    color: #ff5869;
+}
+
+.time-slot.selected {
+    background: #ff5869;
+    color: white;
+    border-color: #ff5869;
+}
+
+.time-slot.occupied {
+    background: #f0f0f0;
+    color: #ccc;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+/* Estilo Css cuadroxd*/
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.tab {
+  border: 2px solid #000;
+  background: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.user {
+  text-align: right;
+}
+
+.welcome {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.logout {
+  background: #2979ff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.container {
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.section-title {
+  border-radius: 5PX;
+  border: 2px solid #000;
+  background: #e0e0e0;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+}
+
+.dashboard {
+  border-radius: 5PX;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 15px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  background: #d9d9d9;
+  padding: 10px;
+  margin: -15px -15px 15px -15px;
+  text-align: center;
+}
+
+.appointment-detail p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a.activo {
+  background-color: rgb(0, 119, 255);
+  color: white;
+}
