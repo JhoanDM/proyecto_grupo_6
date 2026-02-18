@@ -1,0 +1,50 @@
+/* móviles */
+@media (max-width: 790px) {
+    .flecha {
+        display: none;
+    }
+    body {
+        padding-top: 55px;
+    }
+    .mb-5{
+       margin-bottom: 7px !important;
+    }
+}
+
+@media (max-width: 790px) {
+    .pantalla {
+        min-height: auto;
+        scroll-margin-top: 90px;
+    }
+
+    #encabezado,
+    #Locales {
+        width: 100vw;
+    }
+
+    .mapas {
+        width: 100vw;
+    }
+
+    #contenedor-mapas {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 790px) {
+    .logo {
+        height: 35px;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 790px) {
+    .nav-item {
+        display: none;
+    }
+    .nav-item.login{
+        display: inline-block;
+    }
+}
+

@@ -5,7 +5,9 @@
   scroll-margin-top: 110px;
 }
 
-
+#titulopagina {
+  margin-top: 20px;
+}
 
 /* caruucel de fotos de la peluqueria debe tener el tamaño exacto de las imagenes de ejemplo*/
 .carrucel {
@@ -48,20 +50,6 @@
 }
 
 
-.contenedor-mapas {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  margin-bottom: 200px;
-}
-
-.mapa1 {
-  gap: 20px;
-  align-items: center;
-  border: 5px solid black;
-  position: relative;
-  display: inline-block;
-}
 
 
 .card {
@@ -83,14 +71,6 @@
 }
 
 
-@media (max-width: 768px) {
-  .pantalla {
-    min-height: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    scroll-margin-top: 90px;
-  }
-}
 
 
 .icono-servicio {
@@ -100,14 +80,6 @@
   margin-bottom: 15px;
 }
 
-
-@media (max-width: 768px) {
-  .pantalla {
-    min-height: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-}
 
 /*animacion para el carrucel de 4 fotos nada mas*/
 
@@ -145,9 +117,10 @@
   }
 }
 
-/* móviles */
-@media (max-width: 768px) {
-  .flecha {
-    width: 30px;
-  }
+
+
+
+.pie_pagina {
+  border-top: 2px solid black;
+  background-color: white;
 }

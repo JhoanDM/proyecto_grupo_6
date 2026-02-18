@@ -54,23 +54,3 @@ nav a.activo {
     background-color: rgb(149, 149, 255);
     color: white;
 }
-
-
-@media (max-width: 768px) {
-    .logo {
-        height: 35px;
-        margin: 5px;
-    }
-}
-
-@media (max-width: 790px) {
-    nav {
-        display: none;
-    }
-}
-
-@media (max-width: 1000px) {
-    .BotonDefecto {
-        margin: 3px;
-    }
-}

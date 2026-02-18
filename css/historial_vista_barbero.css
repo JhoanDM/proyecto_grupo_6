@@ -1,89 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: bold, sans-serif;
-}
-
-/* HEADER */
-header {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    background-color: white;
-    color: rgb(14, 13, 13);
-    padding: 30px;
-}
-
-
-/* RESET BÁSICO */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* HEADER */
-.header {
-    width: 100%;
-   
-    background-color: white;
-    border-bottom: 2px solid #000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 60px;
-}
-
-/* LOGO */
-.logo-page {
-    width: 150px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
-}
-
-.logo span {
-    font-size: 22px;
-}
-
-/* NAV */
-.nav {
-    display: flex;
-    gap: 15px;
-}
-
-.nav a {
-    text-decoration: none;
-    color: #000;
-    border: 1px solid #000;
-    padding: 4px 10px;
-    font-size: 14px;
-    
-}
-
 .tabs {
+
     margin: 30px;
     text-align: center;
 }
 
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #f2f2f2;
-}
-
 .contenedor-historial {
+    border-radius: 5px;
     width: 90%;
     margin: 30px auto;
     background-color: #fff;
@@ -123,36 +45,96 @@ body {
     justify-content: center;
 }
 
-button {
-    padding: 8px 12px;
-    border: 1px solid #000;
-    background-color: white;
+
+
+
+
+.rating {
+    float: left;
+}
+
+/* :not(:checked) es un filtro, 
+por lo que los navegadores que no admiten :checked no siguen estas reglas. 
+Todos los navegadores que admiten :checked también admiten :not(), 
+por lo que la prueba no es innecesariamente selectiva. */
+.rating:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0, 0, 0, 0);
+}
+
+.rating:not(:checked)>label {
+    float: right;
+    width: 1em;
+    padding: 0 .1em;
+    overflow: hidden;
+    white-space: nowrap;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 200%;
+    line-height: 1.2;
+    color: #ddd;
+    text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
 }
 
-.btn-gris {
-    background-color: #bdbdbd;
+.rating:not(:checked)>label:before {
+    content: '★ ';
 }
 
-button:hover {
-    background-color: #e0e0e0;
+.rating>input:checked~label {
+    color: #f70;
+    text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5);
 }
 
-header {
-    justify-content: space-between;
-    border: #000 1px solid;
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
 }
 
-header .user-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    
-
+.rating>input:checked+label:hover,
+.rating>input:checked+label:hover~label,
+.rating>input:checked~label:hover,
+.rating>input:checked~label:hover~label,
+.rating>label:hover~input:checked~label {
+    color: #ea0;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
 }
-header .logo {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+
+.rating>label:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+/* end of Lea's code */
+
+/*
+ * Clearfix from html5 boilerplate
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    zoom: 1;
+}
+
+/* my stuff */
+#status,
+button {
+    margin: 20px 0;
 }
