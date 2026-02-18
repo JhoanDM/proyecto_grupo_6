@@ -14,24 +14,17 @@
 
 
 <body>
-    <header class="top-bar">
-        <div class="logo">
-            <img src="/img/logo sin fondo.png" alt="logo" />
-            <button type="button" class="btn btn-outline-dark">CITAS PROGRAMADAS</button>
-            <button type="button" class="btn btn-outline-dark">LOCALES</button>
+    <header>
+        <div>
+            <img class="logo" src="/img/logo sin fondo.png" alt="logo" />
         </div>
-        <div class="user-actions">
-            <nav>
-
-
-                <div class="tabs">
-                    <button type="button" class="btn btn-outline-dark">BIENVENIDO PABLO</button>
-                    <a href="/html/pantallaInicio.html">
-                        <button type="button" class="btn btn-outline-primary">CERRAR SESION</button>
-                    </a>
-                </div>
-            </nav>
-        </div>
+        <nav>
+            <div>
+                <a href="/html/pantallaInicio.html#Servicios" class="btn btn-outline-dark activado"> Servicios </a>
+                <a href="/html/pantallaInicio.html#Locales" class="btn btn-outline-dark activado"> Locales </a>
+            </div>
+            <div id="zona-auth"></div>
+        </nav>
     </header>
 
     <div class="container">
@@ -41,7 +34,7 @@
                 <img src="/img/barbera_Daniela_Ospina.jpeg" alt="Barbero 1">
                 <h2>Barbero 1</h2>
                 <p>ESPECIALISTA EN CORTES MODERNOS Y AFILADOS</p>
-                <P>CORTES DE CABEZA</P>
+                <P>CORTES DE CABELLO</P>
                 <P>BARBA</P>
                 <P>TINTE</P>
                 <p>DEPILACION</p>
@@ -51,7 +44,7 @@
                 <img src="/img/barbero_Jabier_Rincon.jpeg" alt="Barbero 2">
                 <h2>Barbero 2</h2>
                 <p>ESPECIALISTA EN TINTE</p>
-                <P>CORTES DE CABEZA</P>
+                <P>CORTES DE CABELLO</P>
                 <P>BARBA</P>
                 <P>TINTE</P>
                 <p>DEPILACION</p>
@@ -62,7 +55,7 @@
                 <h2>Barbero 3</h2>
 
                 <p>ESPECIALISTA EN ATENCIONES AL DETALLE CORTES PERSONALIZADOS</p>
-                <P>CORTES DE CABEZA</P>
+                <P>CORTES DE CABELLO</P>
                 <P>BARBA</P>
                 <P>TINTE</P>
                 <p>DEPILACION</p>
@@ -70,7 +63,8 @@
             </div>
         </div>
     </div>
-
+    <script src="/js/auth.js"></script>
 </body>
+
 
 </html>
