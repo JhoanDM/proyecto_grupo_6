@@ -37,7 +37,7 @@ function actualizarTitulo() {
 
     if (seccionActual === "reporteVentas") {
         titulo.textContent = "TABLA DE VENTAS";
-        label.textContent = "Metodo de Pago:";
+        label.textContent = "Fecha:";
     }
 
     if (seccionActual === "reporteServicios") {
@@ -81,7 +81,7 @@ function actualizarEncabezados() {
         encabezados = ["Cliente", "Hora", "Fecha", "Barbero", "Servicio", "Precio", "Propina", "Metodo de Pago", "Duracion", "Estado", "Observaciones"];
 }
     if (seccionActual === "reporteVentas") {
-        encabezados = ["Fechas", "Total Servicios", "Total Vendido", "Total Propinas", "Venta Promedio", "Servicios Premium", "Ventas Efectivo", "Ventas Electronicas"];
+        encabezados = ["Fechas", "Total Servicios", "Total Vendido", "Total Propinas", "Venta Promedio", "Ventas Efectivo", "Ventas Electronicas"];
     }
     
     if (seccionActual === "reporteServicios") {
