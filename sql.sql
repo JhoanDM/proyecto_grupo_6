@@ -222,4 +222,295 @@ INSERT INTO Cita (idCita, Fecha_hora, estado, Usuario_idUsuarioCli, estado_citas
 
 
 
+Consultas cliente 
+
+/* 1. consulta de servicios despues de elegir 1 en pantalla de inicio */ 
+
+select nombre, duracion, precio from servicio;
+
+/* 2. seleccion de barbero al agendar una cita */
+
+SELECT u.Nombre AS Nombre_Barbero, b.especialidad, b.fotoperfil FROM barbero b JOIN Usuario u ON b.Usuario_idUsuario = u.idUsuario;
+
+/* 3. consuilta informacion de cita cliente, hora, servicio, estado de la cita, precio del servicio */
+
+SELECT u.Nombre AS Cliente, DATE_FORMAT(c.Fecha_hora, '%d %H:%i') AS Hora_Formateada, s.Nombre AS Servicio_Nombre, ec.estado AS Estado_Cita, s.Precio AS Precio_Estimado FROM Cita c JOIN Usuario u ON c.Usuario_idUsuarioCli = u.idUsuario JOIN Servicio s ON c.Servicio_idServicio = s.idServicio JOIN estado_citas ec ON c.estado_citas_id = ec.id WHERE c.idCita = 1;
+
+/* 4. consulta de horarios*/
+
+SELECT DATE_FORMAT(Fecha_hora, '%H:%i') AS hora_ocupada FROM Cita WHERE DATE(Fecha_hora) = '2026-03-16' AND barbero_idbarbero = 1  AND estado_citas_id != 5;
+
+/* 5. consulta validacion inicio de sesion */
+
+
+SELECT 
+    u.idUsuario, 
+    u.Nombre, 
+    u.correo, 
+    r.Nombre_Rol AS rol
+FROM Usuario u
+JOIN Roles r ON u.rol_idRol = r.IDRol
+WHERE u.correo = 'maria@clientes.com' 
+  AND u.contrasena = 'cliente123';
+
+/* 6. INSERT: Crear una nueva cita (Cliente solicita servicio) */
+INSERT INTO Cita (Fecha_hora, estado, Usuario_idUsuarioCli, estado_citas_id, Servicio_idServicio, barbero_idbarbero) 
+VALUES ('2026-03-25 15:00:00', 'pendiente', 9, 1, 1, 3);
+SELECT '19. Nueva Cita' AS Operacion, idCita, Fecha_hora, estado FROM Cita WHERE idCita = LAST_INSERT_ID();
+
+/* 7. SELECT: Ver agenda del día para un barbero específico */
+SELECT '20. Agenda Barbero' AS Operacion, C.Fecha_hora, U.Nombre AS Cliente, S.Nombre AS Servicio 
+FROM Cita C 
+JOIN Usuario U ON C.Usuario_idUsuarioCli = U.idUsuario 
+JOIN Servicio S ON C.Servicio_idServicio = S.idServicio 
+WHERE C.barbero_idbarbero = 1 AND DATE(C.Fecha_hora) = '2026-03-15';
+
+/* 8. UPDATE: Confirmar una cita (Barbero acepta la solicitud) */
+UPDATE Cita SET estado = 'confirmada', estado_citas_id = 2 WHERE idCita = 2;
+SELECT '21. Confirmar Cita' AS Operacion, idCita, estado FROM Cita WHERE idCita = 2;
+
+/* 9. SELECT: Historial de citas de un cliente (Mis Citas)*/ 
+SELECT '22. Historial Cliente' AS Operacion, C.Fecha_hora, S.Nombre AS Servicio, E.estado 
+FROM Cita C 
+JOIN Servicio S ON C.Servicio_idServicio = S.idServicio 
+JOIN estado_citas E ON C.estado_citas_id = E.id 
+WHERE C.Usuario_idUsuarioCli = 7;
+
+/* 10. UPDATE: Cancelar una cita (Cliente o Barbero cancela)*/
+UPDATE Cita SET estado = 'cancelada', estado_citas_id = 5 WHERE idCita = 5;
+SELECT '23. Cancelar Cita' AS Operacion, idCita, estado FROM Cita WHERE idCita = 5;
+
+/* 11. SELECT: Buscar barberos disponibles para un servicio específico */
+SELECT '24. Barberos Disponibles' AS Operacion, U.Nombre, B.especialidad 
+FROM barbero B 
+JOIN Usuario U ON B.Usuario_idUsuario = U.idUsuario 
+WHERE B.disponibilidad = 'Disponible';
+
+/* 12. INSERT: Registrar una evaluación tras completar la cita */
+INSERT INTO Evaluacion_Barbero (Calificacion, Fecha) VALUES (5, CURDATE());
+SET @id_eval = LAST_INSERT_ID();
+INSERT INTO Valora (Evaluacion_Barbero_idEvaluacion_Bar, Evaluacion_Cliente_idEvaluacion_cli) VALUES (@id_eval, 1);
+UPDATE Cita SET Valora_Idvalora = LAST_INSERT_ID(), estado = 'completada', estado_citas_id = 4 WHERE idCita = 1;
+SELECT '25. Evaluar Cita' AS Operacion, idCita, estado, Valora_Idvalora FROM Cita WHERE idCita = 1;
+
+13.  /*Registrar un nuevo cliente: */ 
+    INSERT INTO Clientes (Nombre_Completo, Correo_Electronico, Telefono, Contrasena_Hash)
+    VALUES ('[Nombre Completo]', '[correo@ejemplo.com]', '[Telefono]', '[Contrasena_Hash]');
+    
+
+14.  /*Obtener el perfil completo de un cliente por su ID:*/
+
+    SELECT ID_Cliente, Nombre_Completo, Correo_Electronico, Telefono
+    FROM Clientes
+    WHERE ID_Cliente = [ID_Cliente];
+
+
+15.  /* Actualizar el número de teléfono de un cliente: */ 
+
+    UPDATE Clientes
+    SET Telefono = '[Nuevo Telefono]'
+    WHERE ID_Cliente = [ID_Cliente];
+    
+
+16.  /* Ver todas las citas futuras de un cliente: */ 
+
+    SELECT
+        C.ID_Cita,
+        C.Fecha_Cita,
+        C.Hora_Cita,
+        S.Nombre_Servicio,
+        B.Nombre_Completo AS Nombre_Barbero,
+        L.Nombre_Local
+    FROM Citas C
+    JOIN Servicios S ON C.Servicio_ID = S.ID_Servicio
+    JOIN Barberos B ON C.Barbero_ID = B.ID_Barbero
+    JOIN Locales L ON C.Local_ID = L.ID_Local
+    WHERE C.Cliente_ID = [ID_Cliente] AND C.Fecha_Cita >= CURDATE()
+    ORDER BY C.Fecha_Cita, C.Hora_Cita;
+    
+
+17.  /* Obtener el historial de citas completadas de un cliente: */ 
+
+    SELECT
+        C.ID_Cita,
+        C.Fecha_Cita,
+        C.Hora_Cita,
+        S.Nombre_Servicio,
+        S.Precio,
+        B.Nombre_Completo AS Nombre_Barbero,
+        L.Nombre_Local
+    FROM Citas C
+    JOIN Servicios S ON C.Servicio_ID = S.ID_Servicio
+    JOIN Barberos B ON C.Barbero_ID = B.ID_Barbero
+    JOIN Locales L ON C.Local_ID = L.ID_Local
+    WHERE C.Cliente_ID = [ID_Cliente] AND C.Estado_Cita = 'Completada'
+    ORDER BY C.Fecha_Cita DESC;
+
+
+/* Consultas de Afeitado de Cliente */
+
+18.  /* Programar una cita de afeitado para un cliente:*/
+
+    INSERT INTO Citas (Cliente_ID, Barbero_ID, Servicio_ID, Local_ID, Fecha_Cita, Hora_Cita, Notas)
+    VALUES (
+        [ID_Cliente],
+        [ID_Barbero],
+        (SELECT ID_Servicio FROM Servicios WHERE Nombre_Servicio = 'Afeitado' LIMIT 1),
+        [ID_Local],
+        '[YYYY-MM-DD]',
+        '[HH:MM:SS]',
+        '[Notas Adicionales]'
+    );
+    
+
+19.  /* Obtener todas las citas de afeitado de un cliente (futuras y pasadas):*/
+
+    SELECT
+        C.ID_Cita,
+        C.Fecha_Cita,
+        C.Hora_Cita,
+        B.Nombre_Completo AS Barbero,
+        L.Nombre_Local,
+        C.Estado_Cita
+    FROM Citas C
+    JOIN Servicios S ON C.Servicio_ID = S.ID_Servicio
+    JOIN Barberos B ON C.Barbero_ID = B.ID_Barbero
+    JOIN Locales L ON C.Local_ID = L.ID_Local
+    WHERE C.Cliente_ID = [ID_Cliente] AND S.Nombre_Servicio = 'Afeitado'
+    ORDER BY C.Fecha_Cita DESC, C.Hora_Cita DESC;
+    
+
+20.  /* Cancelar una cita de afeitado específica de un cliente:*/ 
+
+    UPDATE Citas
+    SET Estado_Cita = 'Cancelada'
+    WHERE ID_Cita = [ID_Cita_Afeitado] AND Cliente_ID = [ID_Cliente];
+    
+
+21.  /* Contar el número de citas de afeitado completadas por un cliente:*/
+
+    SELECT COUNT(C.ID_Cita)
+    FROM Citas C
+    JOIN Servicios S ON C.Servicio_ID = S.ID_Servicio
+    WHERE C.Cliente_ID = [ID_Cliente] AND S.Nombre_Servicio = 'Afeitado' AND C.Estado_Cita = 'Completada';
+    
+
+22. /* Obtener el barbero más frecuente para citas de afeitado de un cliente:*/ 
+
+    SELECT B.Nombre_Completo AS Barbero_Frecuente, COUNT(C.ID_Barbero) AS Numero_Citas
+    FROM Citas C
+    JOIN Servicios S ON C.Servicio_ID = S.ID_Servicio
+    JOIN Barberos B ON C.Barbero_ID = B.ID_Barbero
+    WHERE C.Cliente_ID = [ID_Cliente] AND S.Nombre_Servicio = 'Afeitado' AND C.Estado_Cita = 'Completada'
+    GROUP BY B.Nombre_Completo
+    ORDER BY Numero_Citas DESC
+    LIMIT 1;
+    
+
+/*  Consultas de Agenda (para el Barbero/Administrador) */
+
+22. /* Obtener todas las citas pendientes para un barbero en una fecha específica: */
+
+    SELECT
+        C.ID_Cita,
+        C.Hora_Cita,
+        Cl.Nombre_Completo AS Nombre_Cliente,
+        S.Nombre_Servicio,
+        C.Notas
+    FROM Citas C
+    JOIN Clientes Cl ON C.Cliente_ID = Cl.ID_Cliente
+    JOIN Servicios S ON C.Servicio_ID = S.ID_Servicio
+    WHERE C.Barbero_ID = [ID_Barbero] AND C.Fecha_Cita = '[YYYY-MM-DD]' AND C.Estado_Cita = 'Pendiente'
+    ORDER BY C.Hora_Cita;
+    
+
+23. /*Actualizar el estado de una cita a 'Completada':*/
+
+    UPDATE Citas
+    SET Estado_Cita = 'Completada'
+    WHERE ID_Cita = [ID_Cita];
+    
+
+24. /* Obtener la disponibilidad de un barbero para un día específico (horas no ocupadas):*/ 
+
+    SELECT Hora_Cita, Duracion_Minutos
+    FROM Citas C
+    JOIN Servicios S ON C.Servicio_ID = S.ID_Servicio
+    WHERE C.Barbero_ID = [ID_Barbero] AND C.Fecha_Cita = '[YYYY-MM-DD]' AND C.Estado_Cita = 'Pendiente';
+    
+
+25. /*Contar citas por estado para un barbero en el día actual:*/
+
+    SELECT Estado_Cita, COUNT(ID_Cita) AS Cantidad
+    FROM Citas
+    WHERE Barbero_ID = [ID_Barbero] AND Fecha_Cita = CURDATE()
+    GROUP BY Estado_Cita;
+    
+
+26. /*Obtener detalles de una cita específica (para la vista de detalles):*/
+
+    SELECT
+        Cl.Nombre_Completo AS Cliente,
+        S.Nombre_Servicio AS Servicio,
+        S.Precio,
+        C.Fecha_Cita,
+        C.Hora_Cita,
+        C.Notas
+    FROM Citas C
+    JOIN Clientes Cl ON C.Cliente_ID = Cl.ID_Cliente
+    JOIN Servicios S ON C.Servicio_ID = S.ID_Servicio
+    WHERE C.ID_Cita = [ID_Cita];
+
+
+/* Consultas de Perfil del Cliente*/
+
+27. /*Cambiar la contraseña de un cliente:*/
+
+    UPDATE Clientes
+    SET Contrasena_Hash = '[Nuevo_Contrasena_Hash]'
+    WHERE ID_Cliente = [ID_Cliente];
+
+
+28. /*Obtener el promedio de puntuación de las calificaciones de un cliente (si el cliente califica servicios):*/
+
+    -- Asumiendo que el cliente puede calificar servicios de barberos
+    SELECT AVG(Puntuacion)
+    FROM Calificaciones Cal
+    JOIN Citas C ON Cal.Cita_ID = C.ID_Cita
+    WHERE C.Cliente_ID = [ID_Cliente];
+    
+
+29. /*Listar los servicios más solicitados por un cliente:*/
+
+    SELECT S.Nombre_Servicio, COUNT(C.Servicio_ID) AS Veces_Solicitado
+    FROM Citas C
+    JOIN Servicios S ON C.Servicio_ID = S.ID_Servicio
+    WHERE C.Cliente_ID = [ID_Cliente] AND C.Estado_Cita = 'Completada'
+    GROUP BY S.Nombre_Servicio
+    ORDER BY Veces_Solicitado DESC
+    LIMIT 5;
+    
+
+/*Consultas de Cortes de Cabello (y otros servicios)*/
+
+30. /*Obtener todos los servicios de corte de cabello disponibles:*/
+
+    SELECT ID_Servicio, Nombre_Servicio, Precio, Duracion_Minutos
+    FROM Servicios
+    WHERE Nombre_Servicio LIKE '%Corte%';
+    
+
+31. /*Buscar barberos que ofrecen un servicio específico (ej. 'Corte de Pelo'):*/
+
+    SELECT DISTINCT B.Nombre_Completo, B.Telefono, L.Nombre_Local
+    FROM Barberos B
+    JOIN Citas C ON B.ID_Barbero = C.Barbero_ID
+    JOIN Servicios S ON C.Servicio_ID = S.ID_Servicio
+    JOIN Locales L ON B.Local_ID = L.ID_Local
+    WHERE S.Nombre_Servicio = '[Nombre_Servicio_Deseado]';
+
+
+
+
+
 
